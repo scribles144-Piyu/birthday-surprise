@@ -1,14 +1,7 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-
-:root {
-    --background: #09070d;
-    --text: #f7f2f5;
-    --muted: #aaa1ab;
-    --pink: #ff78a8;
-    --purple: #b58cff;
-    --border: rgba(255,255,255,0.12);
 }
 
 html {
@@ -16,468 +9,80 @@ html {
 }
 
 body {
-    margin: 0;
-
-    background:
-        radial-gradient(
-            circle at 15% 15%,
-            rgba(181,140,255,0.16),
-            transparent 30rem
-        ),
-        radial-gradient(
-            circle at 85% 30%,
-            rgba(255,120,168,0.13),
-            transparent 28rem
-        ),
-        var(--background);
-
-    color: var(--text);
-
-    font-family: "DM Sans", sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b12;
+    color: #ffffff;
     overflow-x: hidden;
 }
 
 
-/* Stars */
-
-body::before {
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    background-image:
-        radial-gradient(#fff 1px, transparent 1px);
-
-    background-size: 65px 65px;
-
-    opacity: 0.08;
-}
-
-
-/* Common */
-
-.hero,
-.section,
-.final {
-    width: min(1050px, calc(100% - 40px));
-    margin: auto;
-}
-
-
-/* Hero */
-
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 80px 0;
-}
-
-.small-text,
-.label {
-    text-transform: uppercase;
-
-    letter-spacing: 0.18em;
-
-    font-size: 0.72rem;
-
-    color: var(--pink);
-
-    font-weight: 700;
-}
-
-h1,
-h2 {
-    font-family: "Playfair Display", serif;
-
-    line-height: 0.98;
-}
-
-h1 {
-    font-size: clamp(4rem, 10vw, 8rem);
-
-    margin: 20px 0;
-}
-
-h1 span,
-h2 span {
-    color: var(--pink);
-}
-
-.description {
-    max-width: 560px;
-
-    color: var(--muted);
-
-    font-size: 1.1rem;
-
-    line-height: 1.8;
-}
-
-
-/* Button */
-
-.button {
-    display: inline-block;
-
-    width: fit-content;
-
-    margin-top: 25px;
-
-    padding: 14px 22px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 999px;
-
-    color: white;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,120,168,0.2),
-            rgba(181,140,255,0.16)
-        );
-
-    text-decoration: none;
-
-    font-family: inherit;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: 0.25s;
-}
-
-.button:hover {
-    transform: translateY(-3px);
-
-    border-color: var(--pink);
-
-    box-shadow:
-        0 12px 35px rgba(255,120,168,0.18);
-}
-
-
-/* Sections */
-
-.section {
-    padding: 120px 0;
-}
-
-
-/* Message */
-
-.message-card {
-    margin-top: 25px;
-
-    padding: clamp(30px, 6vw, 65px);
-
-    border: 1px solid var(--border);
-
-    border-radius: 28px;
-
-    background: rgba(255,255,255,0.055);
-
-    backdrop-filter: blur(15px);
-}
-
-.message-card h2 {
-    font-size: clamp(2.3rem, 5vw, 4.2rem);
-
-    max-width: 750px;
-}
-
-.message-card p {
-    max-width: 720px;
-
-    color: var(--muted);
-
-    font-size: 1.05rem;
-
-    line-height: 1.9;
-}
-
-.signature {
-    color: var(--pink) !important;
-
-    font-family: "Playfair Display", serif;
-
-    font-size: 1.3rem !important;
-
-    margin-top: 35px;
-}
-
-
-/* Memories */
-
-.section-title {
-    font-size: clamp(2.4rem, 5vw, 4.5rem);
-
-    margin-top: 20px;
-}
-
-.cards {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 18px;
-
-    margin-top: 30px;
-}
-
-.card {
-    min-height: 230px;
-
-    padding: 30px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 28px;
-
-    background: rgba(255,255,255,0.055);
-
-    transition: 0.25s;
-}
-
-.card:hover {
-    transform: translateY(-7px);
-
-    border-color: rgba(255,120,168,0.4);
-}
-
-.icon {
-    font-size: 1.8rem;
-
-    color: var(--pink);
-}
-
-.card h3 {
-    margin-top: 30px;
-}
-
-.card p {
-    color: var(--muted);
-
-    line-height: 1.7;
-}
-
-
-/* Wish */
-
-.wish-card {
-    text-align: center;
-
-    padding: 60px 25px;
-
-    margin-top: 25px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 28px;
-
-    background: rgba(255,255,255,0.055);
-
-    backdrop-filter: blur(15px);
-}
-
-.cake {
-    font-size: 4rem;
-}
-
-.wish-card h2 {
-    font-size: clamp(2.5rem, 6vw, 5rem);
-}
-
-.wish-card p {
-    color: var(--muted);
-}
-
-#wishMessage {
-    min-height: 25px;
-
-    color: var(--pink);
-
-    font-weight: 700;
-}
-
-
-/* Final */
-
-.final {
-    min-height: 80vh;
-
-    display: grid;
-
-    align-content: center;
-
-    padding: 100px 0;
-}
-
-.final h2 {
-    font-size: clamp(3rem, 8vw, 7rem);
-
-    margin: 15px 0;
-}
-
-.final > p:last-child {
-    color: var(--muted);
-
-    font-size: 1.1rem;
-}
-
-
-/* Footer */
-
-footer {
-    text-align: center;
-
-    padding: 30px 20px 50px;
-
-    color: #6f6870;
-
-    font-size: 0.8rem;
-}
-
-
-/* Mobile */
-
-@media (max-width: 700px) {
-
-    .hero,
-    .section,
-    .final {
-        width: calc(100% - 28px);
-    }
-
-    .hero {
-        min-height: 95vh;
-    }
-
-    h1 {
-        font-size: clamp(3.5rem, 18vw, 6rem);
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .section {
-        padding: 85px 0;
-    }
-    /* =========================================
-   FLOATING POLAROID MEMORIES
+/* =========================================
+   FLOATING POLAROID PHOTOS
 ========================================= */
 
 .floating-photos {
     position: fixed;
     inset: 0;
-
     width: 100%;
-    height: 100%;
-
+    height: 100vh;
     pointer-events: none;
-
     z-index: 0;
-
     overflow: hidden;
 }
 
-
-/* Polaroid */
-
 .polaroid {
     position: absolute;
-
     width: 155px;
-
-    padding: 9px 9px 38px 9px;
-
+    padding: 9px 9px 38px;
     background: rgba(255, 255, 255, 0.94);
-
-    box-shadow:
-        0 20px 55px rgba(0, 0, 0, 0.45);
-
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
     border-radius: 3px;
-
     opacity: 0.22;
-
     animation: polaroidFloat 10s ease-in-out infinite;
 }
 
-
-/* Photo inside */
-
 .polaroid img {
     display: block;
-
     width: 100%;
     height: 145px;
-
     object-fit: cover;
-
     border-radius: 1px;
 }
-
-
-/* Positions */
 
 .polaroid-1 {
     left: 4%;
     top: 17%;
-
     transform: rotate(-12deg);
-
     animation-delay: 0s;
 }
 
 .polaroid-2 {
     right: 5%;
     top: 12%;
-
     transform: rotate(10deg);
-
     animation-delay: -2s;
 }
 
 .polaroid-3 {
     left: 8%;
     bottom: 13%;
-
     transform: rotate(8deg);
-
     animation-delay: -5s;
 }
 
 .polaroid-4 {
     right: 8%;
     bottom: 15%;
-
     transform: rotate(-9deg);
-
     animation-delay: -7s;
 }
 
 .polaroid-5 {
     left: 46%;
     top: 7%;
-
     width: 125px;
-
     padding-bottom: 30px;
-
     transform: rotate(6deg);
-
     animation-delay: -4s;
 }
 
@@ -485,11 +90,7 @@ footer {
     height: 115px;
 }
 
-
-/* Floating animation */
-
 @keyframes polaroidFloat {
-
     0% {
         margin-top: 0;
     }
@@ -512,21 +113,357 @@ footer {
 }
 
 
-/* Keep website content above photos */
+/* =========================================
+   HERO SECTION
+========================================= */
 
-.hero,
-.section,
-.final,
-footer {
+.hero {
     position: relative;
-
     z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 80, 150, 0.12),
+            transparent 60%
+        );
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #ff8fbc,
+        #ffffff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #cfcfd8;
+    max-width: 650px;
+    line-height: 1.7;
 }
 
 
-/* Mobile */
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+
+.section {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1000px;
+    margin: auto;
+
+    padding: 100px 25px;
+}
+
+.section h2 {
+    text-align: center;
+
+    font-size: clamp(2rem, 5vw, 3.5rem);
+
+    margin-bottom: 50px;
+
+    color: #ffffff;
+}
+
+.section > p {
+    text-align: center;
+    color: #bdbdc8;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   MESSAGE CARD
+========================================= */
+
+.message-card {
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.message-card p {
+    color: #d8d8df;
+
+    font-size: 1.1rem;
+
+    line-height: 1.9;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   LITTLE THINGS CARDS
+========================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+
+    font-size: 1.3rem;
+
+    color: #ff9bc2;
+}
+
+.card p {
+    color: #c4c4ce;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   WISH SECTION
+========================================= */
+
+.wish-section {
+    text-align: center;
+}
+
+.wish-button {
+    border: none;
+
+    padding: 16px 32px;
+
+    margin-top: 30px;
+
+    border-radius: 50px;
+
+    background: #ff6fa8;
+
+    color: white;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.wish-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(255, 111, 168, 0.35);
+}
+
+.wish-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================
+   FINAL MESSAGE
+========================================= */
+
+.final {
+    position: relative;
+    z-index: 2;
+
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 25px;
+}
+
+.final h2 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+
+    margin-bottom: 25px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #ff8fbc
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+}
+
+.final p {
+    max-width: 650px;
+
+    color: #c8c8d0;
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    color: #777783;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+.confetti {
+    position: fixed;
+
+    width: 10px;
+    height: 10px;
+
+    top: -20px;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    animation: confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 700px) {
+
+    .hero {
+        min-height: 90vh;
+
+        padding: 30px 20px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 70px 20px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .message-card {
+        padding: 25px 20px;
+    }
 
     .polaroid {
         width: 90px;
@@ -563,5 +500,179 @@ footer {
     .polaroid-5 {
         display: none;
     }
+    
+} 
+/* FORCE FLOATING PHOTOS */
+
+.floating-photos {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
 }
+
+.floating-photos .polaroid {
+    position: absolute !important;
+    display: block !important;
+    width: 190px !important;
+    padding: 8px 8px 32px !important;
+    background: white !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4) !important;
+    opacity: 0.3 !important;
+}
+
+.floating-photos .polaroid img {
+    display: block !important;
+    width: 100% !important;
+    height: 170px !important;
+    object-fit: cover !important;
+}
+
+.floating-photos .polaroid-1 {
+    left: 3% !important;
+    top: 20% !important;
+    transform: rotate(-10deg) !important;
+}
+
+.floating-photos .polaroid-2 {
+    right: 3% !important;
+    top: 15% !important;
+    transform: rotate(9deg) !important;
+}
+
+.floating-photos .polaroid-3 {
+    left: 5% !important;
+    bottom: 12% !important;
+    transform: rotate(8deg) !important;
+}
+
+.floating-photos .polaroid-4 {
+    right: 5% !important;
+    bottom: 15% !important;
+    transform: rotate(-8deg) !important;
+}
+
+.floating-photos .polaroid-5 {
+    left: 45% !important;
+    top: 5% !important;
+    width: 155px !important;
+    transform: rotate(6deg) !important;
+}
+
+.floating-photos .polaroid-5 img {
+    height: 135px !important;
+}
+
+.hero,
+.section,
+.final,
+footer {
+    position: relative !important;
+    z-index: 2 !important;
+}
+/* MAKE A WISH BUTTON */
+
+.wish-button,
+button.wish-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 16px 34px !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 50px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    font-family: inherit !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    cursor: pointer !important;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25) !important;
+    backdrop-filter: blur(10px) !important;
+    transition: all 0.3s ease !important;
+}
+
+.wish-button:hover,
+button.wish-button:hover {
+    transform: translateY(-3px) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.45) !important;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35) !important;
+}
+
+.wish-button:active,
+button.wish-button:active {
+    transform: translateY(0) !important;
+}
+.wish-button {
+    position: relative;
+    padding: 15px 32px !important;
+    border: 1px solid rgba(255,255,255,0.28) !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,0.06) !important;
+    color: white !important;
+    font-family: inherit !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.4px !important;
+    cursor: pointer !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25) !important;
+    transition: all 0.35s ease !important;
+}
+
+.wish-button:hover {
+    background: rgba(255,255,255,0.11) !important;
+    border-color: rgba(255,255,255,0.5) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35) !important;
+}
+
+.wish-button:active {
+    transform: translateY(-1px) !important;
+}
+/* WISH BUTTON - FINAL STYLE */
+
+#wishButton.button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin-top: 20px !important;
+    padding: 14px 30px !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 50px !important;
+
+    background: rgba(255, 255, 255, 0.07) !important;
+    color: #ffffff !important;
+
+    font-family: inherit !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.4px !important;
+
+    cursor: pointer !important;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25) !important;
+    backdrop-filter: blur(12px) !important;
+
+    transition: all 0.35s ease !important;
+}
+
+#wishButton.button:hover {
+    transform: translateY(-3px) !important;
+
+    background: rgba(255, 255, 255, 0.13) !important;
+    border-color: rgba(255, 255, 255, 0.45) !important;
+
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35) !important;
+}
+
+#wishButton.button:active {
+    transform: translateY(-1px) !important;
 }
